@@ -1,0 +1,1625 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+      background-color: #f4f6f8;
+    }
+
+
+
+/* SOLAR ADWANTAGE SECTION */
+.solar-adwantage-section {
+      background-color: #f4f6f8;
+  padding: 3rem 2rem;
+  margin-bottom: 0;
+}
+
+.solar-adwantage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solar-adwantage-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.solar-adwantage-text {
+  flex: 1 1 55%;
+}
+
+.solar-adwantage-text .section-title {
+  font-size: 2rem;
+  color: #1D7B40;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.solar-adwantage-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.solar-adwantage-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0; /* ❌ No extra gap between items */
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.solar-adwantage-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #1D7B40;
+  font-weight: bold;
+}
+
+/* Right image styling */
+.solar-adwantage-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.solar-adwantage-image img {
+  width: 100%;
+  max-width: 400px; /* ✅ Larger image */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .solar-adwantage-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .solar-adwantage-text .section-title {
+    text-align: center;
+  }
+
+  .solar-adwantage-list li {
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  .solar-adwantage-image {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+
+/* Topbar */
+.topbar {
+  background-color: #f4f6f8;
+  color: #444;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border-bottom: 1px solid #ddd; /* ✅ Border only spans content width */
+}
+
+.topbar a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.topbar a:hover {
+  text-decoration: underline;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.divider {
+  margin: 1PX 4px;
+}
+
+
+
+
+
+
+
+
+
+/* ✅ MOBILE VIEW */
+@media (max-width: 600px) {
+  .email-text,
+  .icon-email,
+  .location-text,
+  .icon-location,
+  .divider {
+    display: none !important;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Scroll to Top Button */
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+      font-size: 1rem;
+      background-color: #1D7B40;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 0.6rem 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease;
+    }
+
+    #scrollToTopBtn:hover {
+      background-color: #145f2e;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Layout */
+body {
+  margin: 0;
+  padding-top: 120px;
+  font-family: sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Make sure dropdown is positioned relative to the nav link */
+.dropdown {
+  position: relative;
+}
+
+/* Hidden by default */
+/* Ensure nav link is on top */
+.nav-links li a {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure the underline stays on top too */
+.nav-links li a::after {
+  z-index: 2;
+}
+
+/* Dropdown menu stays underneath the underline visually */
+.dropdown-menu {
+  z-index: 1;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f4f6f8;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  list-style: none;
+  padding: 1rem 0;
+  min-width: 220px;
+  display: none;
+}
+
+/* Keep dropdown open when hovering parent or dropdown */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: block;
+}
+
+
+/* Style inner links */
+.dropdown-menu li a {
+  padding: 0.5rem 1rem;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+  transition: background 0.3s;
+}
+
+/* Hover effect on dropdown items */
+.dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+  color: #1D7B40;
+}
+
+
+
+
+/* Dropdown hidden initially */
+.mobile-dropdown-menu {
+  display: none;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+  list-style: none;
+}
+
+/* Show when parent has class .open */
+.mobile-dropdown.open .mobile-dropdown-menu {
+  display: block;
+}
+
+/* Arrow icon styling */
+.dropdown-icon {
+  font-size: 1rem;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Rotate › to ⌄ (90 deg) */
+.mobile-dropdown.open .dropdown-icon {
+  transform: rotate(90deg);
+}
+
+/* Submenu arrow before each item */
+.mobile-dropdown-menu li a::before {
+  content: "› ";
+  font-weight: bold;
+  color: #1D7B40;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: #1D7B40;
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.25s ease;
+}
+
+
+
+
+
+.mobile-dropdown-toggle {
+  display: flex;
+  justify-content: space-between; /* puts text left, arrow right */
+  align-items: center;
+  width: 100%; /* makes sure they spread full width */
+}
+.mobile-dropdown-toggle a {
+  flex-grow: 1;
+  text-decoration: none;
+  color: #000;
+}
+
+.hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animate to X when open */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.hamburger span {
+  margin: 2px 0; /* adds gap between lines */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Header */
+.main-header {
+  position: fixed;
+  top: 40px; /* Keep this if you want space from the very top */
+  left: 0;
+  width: 100%; /* The fixed header itself still spans 100% */
+      background-color: #f4f6f8;
+  z-index: 999;
+  /* No grid properties here anymore */
+  /* Remove padding from here as it will be on the inner container */
+  padding: 0; /* Set to 0 or remove if not needed */
+}
+
+/* New inner container for content */
+.header-inner-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+
+/* Your existing grid children styles - no changes needed for these specific ones */
+.header-section {
+  flex: 1 1 auto;
+  /*min-width: 150px;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .button-box {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .solar-calculator-btn,
+  .join-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  white-space: nowrap; /* Prevent wrapping */
+  /* max-width: 100%; - Removed this as it can conflict or is redundant with the new structure */
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    height: 40px; /* smaller logo in mobile */
+  }
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Logo Text */
+.logo-text {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* SOLID BUTTON - Join Button */
+.join-btn {
+  background-color: #1D7B40;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #166b35;
+}
+
+
+/* OUTLINE BUTTON - Solar Calculator */
+.solar-calculator-btn {
+  background-color: transparent;
+  color: #1D7B40;
+  border: 2px solid #1D7B40;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.solar-calculator-btn:hover {
+  background-color: #1D7B40;
+  color: white;
+}
+
+
+
+/* Add new classes for specific colors */
+.logo-astraway {
+  color: #1D7B40; /* Astraway's color */
+  font-size: larger;
+}
+
+.logo-energy {
+  color: #2284B8; /* Energy's color */
+    font-size: larger;
+
+}
+
+
+
+/* Nav Menu */
+.nav-menu {
+  justify-content: center;
+  font-weight: 500px;
+  }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none; /* Remove default underline */
+  color: #000;
+  position: relative; /* Essential for positioning the pseudo-element */
+  padding-bottom: 3px; /* Creates the small gap between text and line */
+  transition: color 0.3s ease; /* Only color transition on the link itself */
+}
+
+.nav-links li a::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Aligns the line at the bottom of the link */
+  width: 0%; /* Starts with no width */
+  height: 2px; /* Thickness of the underline */
+  background-color: #1D7B40; /* Color of the underline */
+  transition: width 0.3s ease-out; /* Smooth width transition */
+}
+
+.nav-links li a:hover {
+  color: #1D7B40; /* Change text color on hover */
+}
+
+.nav-links li a:hover::after {
+  width: 100%; /* Expands to full width on hover */
+}
+/* Button + Hamburger */
+.button-box {
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+      background-color: #f4f6f8;
+  position: fixed;
+  /* top: 120px; - You might need to adjust this depending on your header's total height */
+  top: calc(40px + 60px + (0.5rem * 2)); /* top offset + logo height + vertical padding of inner content */
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 998;
+  padding: 1rem 2rem;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav ul li {
+  margin: 1rem 0;
+}
+
+.mobile-nav ul li a,
+.mobile-nav ul li button {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Adjust header-inner-content for mobile */
+  .header-inner-content {
+    grid-template-columns: auto 1fr auto; /* Adjust grid for mobile if needed */
+    padding: 0.5rem 1rem; /* Adjust padding for mobile */
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .join-btn {
+    display: none;
+  }
+  
+
+  .hamburger {
+    display: block;
+    /* margin-left: 180px; - This is likely not needed or problematic with grid. */
+    /* Let the grid handle placement. If you want it further right, adjust grid-template-columns. */
+  }
+
+  .mobile-nav.active {
+    display: block;
+  }
+
+  .logo-text {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1D7B40;
+    white-space: nowrap; /* keep text in one line */
+  }
+
+  @media (max-width: 768px) {
+  .solar-calculator-btn,
+  .join-btn {
+    display: none;
+  }
+}
+
+  .button-box {
+    justify-content: flex-end;
+  }
+}
+
+/* Specific adjustment for very small screens if needed, especially for the grid */
+@media (max-width: 480px) {
+    .header-inner-content {
+        grid-template-columns: auto 1fr auto; /* Maybe auto auto 1fr for smaller logo, then nav/button */
+    }
+    .logo-text {
+        font-size: 0.9rem; /* Smaller text for logo on very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.hero-section {
+      background-color: #f4f6f8;
+  padding: 4rem 2rem 3rem;
+  position: relative;
+
+  /* Background image in box size */
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center; /* Or top left, center right, etc. */
+  background-size: 1250px auto; /* ✅ Box-sized image */
+  border-radius: 25px;
+}
+
+
+.hero-container {
+  display: flex;
+  
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 50%;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: #1D7B40;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+  font-size: 1.8rem;
+  color: #2284B8;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.primary-btn,
+.outline-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #1D7B40;
+  color: #fff;
+  border: none;
+}
+
+.primary-btn:hover {
+  background-color: #145f2e;
+}
+
+.outline-btn {
+  background-color: transparent;
+  color: #1D7B40;
+  border: 2px solid #1D7B40;
+}
+
+.outline-btn:hover {
+  background-color: #1D7B40;
+  color: #fff;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* STATS SECTION */
+.stats-section {
+  background-color: #f4f6f8;
+  padding: 3rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1 1 22%;
+  background: #f4f6f8;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+.stat-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Stat number styling */
+.stat-item h2 {
+  font-size: 2.5rem;
+  color: #1D7B40;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Label styling */
+.stat-item p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Optional pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.stat-item:hover h2 {
+  animation: pulse 0.5s ease;
+  color: #145f2e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stat-item {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .stat-item {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+.solar-news-section {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.solar-news-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.solar-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.solar-card {
+      background-color: #f4f6f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+.solar-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #1D7B40;
+}
+
+.solar-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.solar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+
+
+
+
+
+
+  /* PARTNERS SECTION */
+.partners-section {
+      background-color: #f4f6f8;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.partners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partners-section .section-title {
+  font-size: 2rem;
+  color: #1D7B40;
+  margin-bottom: 2rem;
+}
+
+/* Logo container */
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Individual logos */
+.partners-logos img {
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.partners-logos img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .partners-logos {
+    gap: 1rem;
+  }
+
+  .partners-logos img {
+    max-height: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+    /* PRODUCT SECTION */
+.product-section {
+      background-color: #f4f6f8;
+  padding: 3rem 2rem;
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1D7B40;
+  margin-bottom: 2rem;
+}
+
+/* Carousel */
+.product-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.product {
+  min-width: 250px;
+  background-color: #f4f6f8;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 0 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 👇 Hover effect added */
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product h3 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Carousel controls */
+.carousel-controls {
+  margin-top: 1rem;
+}
+
+.carousel-btn {
+  background-color: #1D7B40;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #145f2e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .product-carousel {
+    gap: 1rem;
+  }
+
+  .product {
+    min-width: 200px;
+  }
+}
+
+
+
+
+
+
+/* MISSION SECTION */
+/* MISSION SECTION */
+.mission-section {
+      background-color: #f4f6f8;
+  padding: 3rem 2rem;
+  margin-bottom: 0; /* ✅ No extra space below */
+}
+
+.mission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mission-text {
+  flex: 1 1 55%;
+}
+
+.mission-text .section-title {
+  font-size: 2rem;
+  color: #1D7B40;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.mission-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.mission-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.mission-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #1D7B40;
+  font-weight: bold;
+}
+
+/* Right image styling */
+.mission-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.mission-image img {
+  width: 100%;
+  max-width: 300px; /* ✅ Limit image size */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.solar-image img {
+  width: 100%;
+  max-width: 300px; /* ✅ Limit image size */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-text .section-title {
+    text-align: center;
+  }
+
+  .mission-list li {
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  .mission-image {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NEWSLETTER SECTION */
+.newsletter {
+      background-color: #f4f6f8;
+  padding: 1.5rem 2rem 2rem; /* ✅ Reduced top padding */
+}
+
+/* ✅ Replaces .footer-container */
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.newsletter-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.newsletter-text {
+  flex: 1 1 300px;
+}
+
+.newsletter-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #1D7B40;
+}
+
+.newsletter-text p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.newsletter-form {
+  flex: 1 1 300px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.newsletter-form button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #1D7B40;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #145f2e;
+}
+
+
+
+
+
+
+
+
+
+
+/* FOOTER BASE STYLES */
+.footer {
+      background-color: #f4f6f8;
+  color: #000;
+  padding: 3rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.brand-logo {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand-astraway {
+  color: #1D7B40;
+}
+
+.brand-energy {
+  color: #2284B8;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-column p {
+  margin: 0.3rem 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: #000;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.social-icons img {
+  height: 24px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
+/* ✅ RESPONSIVE DESIGN */
+
+/* ✅ MOBILE VIEW OPTIMIZATION (≤ 600px) */
+@media (max-width: 600px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem; /* Reduced spacing between sections */
+  }
+
+  .footer-brand,
+  .footer-column {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-column:last-child {
+    margin-bottom: 0; /* Prevent extra space after last column */
+  }
+
+  .footer-container {
+    padding-top: 1rem; /* Reduce top padding for tighter layout */
+  }
+
+  .brand-row {
+    flex-direction: column; /* Stack logo above text */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-logo {
+    height: 100px; /* Slightly smaller logo for mobile */
+    width: auto;
+  }
+
+  .brand-name {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ✅ TABLET & SMALL LAPTOP VIEW (601px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer-columns {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .footer-brand,
+  .footer-column {
+    flex: 1 1 45%; /* 2 columns per row */
+    max-width: 48%;
+    margin-bottom: 2rem;
+  }
+
+  .brand-row {
+    flex-direction: row; /* Logo + text side-by-side */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .brand-logo {
+    height: 110px;
+    width: auto;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+    white-space: nowrap;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+/* Floating WhatsApp Icon */
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px; /* moved up to avoid overlap with scroll buttons */
+  right: 20px;
+  z-index: 1000;
+  padding: 10px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+
+
+
+.smart-solar-calculator {
+  background: #f4f6f8;
+  padding: 3rem 1rem;
+  text-align: center;
+  
+}
+
+.calculator-box {
+  width: 100%;
+  max-width: 1200px; /* Match upper section width */
+  margin: auto;
+  background: #f4f6f8;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.calculator-box h2 {
+  margin-bottom: 1.5rem;
+  color: #1D7B40;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.form-step {
+  flex: 1 1 45%; /* Makes it 2-column on wider screens */
+  min-width: 250px;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-step label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-step input,
+.form-step select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.calculate-btn {
+  background-color: #1D7B40;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+  width: auto;
+}
+
+.calculate-btn:hover {
+  background-color: #166b35;
+}
+
+.result-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f4f6f8;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1d1d1d;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.calculate-btn {
+  margin-top: 1rem;
+  width: auto;
+}
