@@ -144,3 +144,22 @@ window.addEventListener('scroll', () => {
   const scrollPercent = (scrollTop / docHeight) * 100;
   document.getElementById('scrollProgress').style.width = scrollPercent + '%';
 });
+
+
+  (function () {
+    var lastScroll = 0;
+    var header = document.querySelector('.main-header');
+    if (!header) return;
+
+    window.addEventListener('scroll', function () {
+      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScroll) {
+        // Scroll down → hide header
+        header.style.top = '-80px';
+      } else {
+        // Scroll up → show header
+        header.style.top = '40px';
+      }
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  })();
