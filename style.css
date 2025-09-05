@@ -1625,3 +1625,21 @@ transition: top 0.4s ease-in-out; /* Smooth slide */
   margin-top: 1rem;
   width: auto;
 }
+
+
+.installment-btn {
+  background-color: #166b35; /* Orange for attention */
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.installment-btn:hover {
+  background-color: #d88a00;
+}
+
